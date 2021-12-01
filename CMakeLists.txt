@@ -71,13 +71,17 @@ add_library(${PROJECT_NAME}
 #############
 
 # Install plugins
-install(FILES swereve_steering_controller_plugins.xml
+install(FILES swerve_steering_controller_plugins.xml
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
 # Install headers
 install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+)
+
+install(DIRECTORY launch config
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
 # Install library
