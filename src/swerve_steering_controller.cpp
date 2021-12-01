@@ -248,6 +248,15 @@ namespace swerve_steering_controller
 	  // Retreive current velocity command and time step
 	  utils::command current_cmd = *(commands_buffer_.readFromRT());
 
+	  const double dt = (time - current_cmd.stamp).toSec();
+	  // Brake if cmd_vel has timeout of .5s//
+	  if (dt > 0.5)
+	  {
+        current_cmd.x = 0.0;
+        current_cmd.y = 0.0;
+        current_cmd.w = 0.0;
+	  }
+
 
 	  // Limit velocities and accelerations:
 	  const double cmd_dt(period.toSec());

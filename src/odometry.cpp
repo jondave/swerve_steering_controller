@@ -149,14 +149,14 @@ namespace swerve_steering_controller
       {
         if((fabs(intersections[i][0]-intersections[i-1][0])>intersection_tol_ || fabs(intersections[i][1]-intersections[i-1][1])>intersection_tol_) && i!=0)
         {
-          ROS_ERROR_STREAM("intersections are not close enough to get an average, dropping!");
+          ROS_WARN_STREAM("intersections are not close enough to get an average, dropping!");
           for (size_t i=0; i<wheels_num_; ++i)
           {
-            ROS_WARN_STREAM("theta, omega: "<<holders_theta[i]<<" "<<wheels_omega[i]);
+            ROS_DEBUG_STREAM("theta, omega: "<<holders_theta[i]<<" "<<wheels_omega[i]);
           }
           for (size_t i=0; i<intersections.size(); ++i)
           {
-            ROS_WARN_STREAM("intersection i:"<<i<<" , "<<intersections[i][0]<<"  "<<intersections[i][1]);
+            ROS_DEBUG_STREAM("intersection i:"<<i<<" , "<<intersections[i][0]<<"  "<<intersections[i][1]);
           }
           return false;
         }

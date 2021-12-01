@@ -12,14 +12,12 @@
       respawn="false" output="screen" />
 
 <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
-
-
-<rosparam file="$(find swerve_steering_controller)/test/config/ros_controllers.yaml" command="load"/>
-
 <node name="tfpublisher" pkg="swerve_steering_controller" type="odompublisher.py"/>
 
-<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-  output="screen" args="swerve_steering_controller joint_state_controller"/>
+<include file="$(find swerve_steering_controller)/launch/controller.launch">
+</include>
+
+
 
 
 </launch>
