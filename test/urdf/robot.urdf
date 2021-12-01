@@ -226,7 +226,7 @@
   </link>
 
   <joint    name="holder3_joint"    type="revolute">
-    <origin      xyz="0.3 -0.1 0.0"      rpy="1.5707963267949 0 0.0" />
+    <origin      xyz="0.1 -0.1 0.0"      rpy="1.5707963267949 0 0.0" />
     <parent      link="base_link" />
     <child      link="holder3" />
     <axis      xyz="0 1 0" />
@@ -299,7 +299,7 @@
   </link>
 
   <joint    name="holder4_joint"    type="revolute">
-    <origin      xyz="0.3 0.1 0.0"      rpy="1.5707963267949 0 3.14" />
+    <origin      xyz="0.1 0.1 0.0"      rpy="1.5707963267949 0 3.14" />
     <parent      link="base_link" />
     <child       link="holder4" />
     <axis      xyz="0 1 0" />
